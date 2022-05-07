@@ -1,0 +1,42 @@
+body{
+	background-color: rgba(232,231,227);
+}
+.task {
+	
+	box-sizing: content-box;
+
+}
+.center {
+	text-align: center;
+}
+.done,.done-already {
+	margin: auto;
+	vertical-align: bottom;
+	cursor: pointer;
+	display: block;
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+	border: 1px solid black;
+	flex-shrink: 0;
+}
+.time-date{
+	font-family: serif;
+	color: grey;
+}
+#add-task-icon{
+	color: grey;
+	cursor: pointer;
+}
+#add-task-icon:hover{
+	color: red;
+}
+button:active{
+	transform: scale(0.9);
+    box-shadow: 3px 2px 10px 1px rgba(0, 0, 0, 0.24);
+           
+}
+.trash:hover,.trash-can:hover{
+	color: red;
+	cursor: pointer;
+}

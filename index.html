@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>To-Do List</title>
+	<meta name="description" content="A basic to-do list designed using front end technology and APIs">
+	<meta name="author" content="Saksham Sasan">
+	<meta name="keywords" content="coding,roject,API,frint-end,HTML,CSS,JavaScript">
+	<script src="https://kit.fontawesome.com/ad69b35deb.js" crossorigin="anonymous"></script>
+	<link rel="shortcut icon" type="image/png" href="todopics/fav.png">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<div class="border-bottom border-danger"style="margin:auto;width:40vw;"><h1 class="center mt-5">To Do List</h1></div>
+	<div class="container mt-5">
+
+		<div class="row">
+			<div class="col-10 col-md-6 offset-1 offset-md-3">
+				<div>Total Tasks Completed: <span id="numCompletion">0</span></div>
+			</div>
+
+		</div>
+		<div class="row" id="parent">
+			<div class="col-10 col-md-6 offset-1 offset-md-3 rounded bg-light task py-2 px-1 my-3" id="Keep hustlin'. By Order of the Peaky blinders" onclick="alert(`This is a default task and can't be edited/deleted/completed`)">
+			
+			<div class="row w-100 h-100">
+				<div class="col-1 d-flex align-items-center px-3 h-100">
+					<div class="done-already"></div>
+				</div>
+				<div class="col-9">
+					<p class="d-inline"><b>Keep hustlin'. By Order of the Peaky blinders</b></p>
+					<br>
+					<i class="time-date">Everyday</i>
+				</div>
+				<div class="col-1 d-flex align-items-center justify-content-end trash-can h-100 m-0">
+					<i class="fa-solid fa-trash-can"></i>
+				</div>
+			</div>
+
+		</div>
+		
+	</div>
+	<div class="row mt-5">
+		<div class="col-10 col-md-6 offset-1 offset-md-3 py-2 px-1" >
+			<div  id="add-task-icon"><i class="fa-solid fa-plus"></i>&nbsp;&nbsp;Add task</div>
+			<div class="w-100 border border-dark p-2 rounded" id="myDiv" style="box-sizing: border-box;transform: scale(0);">
+				<form>
+					<div class="w-75">
+					<label for="taskname" class="mb-2">Task Name</label>
+					<input type="text" class="w-100 rounded px-2" style="border:none;" name="taskname" id="taskname" placeholder="e.g., Go to gym" >
+				</div>
+				<br>
+				<div class="w-50">
+					<label for="tasktime" class="mb-2">Task Day and Time</label>
+					<input type="text" class="w-100 rounded px-2" name="tasktime" placeholder="e.g., Mon, 5:30pm" id="tasktime" style="border:none;">
+				</div>
+				<br>
+				<button type="button" class="me-5 bg-primary rounded " style="border:none;color:white;" id="click-to-add">Add Task</button>
+				<button type="button" class="bg-danger rounded" style="border:none;color:white;" id="click-to-cancel">Cancel</button>
+				</form>
+				
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
