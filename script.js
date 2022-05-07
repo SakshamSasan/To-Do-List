@@ -128,27 +128,27 @@ function addTask1(arr) {
 	let input1val = document.getElementById('taskname').value
 	let input2val = document.getElementById('tasktime').value
 
-	if(input1val==null || input1val=="") {
-		alert('A unique task name is necessary');
+	if(input1val==null || input1val=="" || input2val==null || input2val=="") {
+		alert('A unique task name and time is necessary');
 		return;
 	}
 
 	let newdiv = document.createElement('div')
 
-	newdiv.setAttribute('id',input1val)
+	newdiv.setAttribute('id',input1val+input2val)
 	newdiv.classList.add('col-10','col-md-6', 'offset-1','offset-md-3','rounded','bg-light', 'task', 'py-2', 'px-1', 'my-3');
 	newdiv.innerHTML=`
 			
 			<div class="row w-100 h-100">
 				<div class="col-1 d-flex align-items-center px-3 h-100">
-					<div class="done" data-id='${input1val}'></div>
+					<div class="done" data-id='${input1val+input2val}'></div>
 				</div>
 				<div class="col-9">
 					<p class="d-inline" ><b>${input1val}</b></p>
 					<br>
 					<i class="time-date">${input2val}</i>
 				</div>
-				<div class="col-1 d-flex align-items-center justify-content-end trash h-100 m-0" data-id="${input1val}">
+				<div class="col-1 d-flex align-items-center justify-content-end trash h-100 m-0" data-id="${input1val+input2val}">
 					<i class="fa-solid fa-trash-can"></i>
 				</div>
 				</div>
@@ -169,7 +169,7 @@ function addTask1(arr) {
 	goOriginal();
 	let obj = {}
 	obj["userId"] = 1;
-	obj["id"] = input1val;
+	obj["id"] = input1val+input2val;
 	obj["title"] = input1val;
 	
 	//Now we will add to API using await in front of things that are promises 
