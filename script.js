@@ -172,21 +172,34 @@ function addTask1(arr) {
 	obj["id"] = input1val+input2val;
 	obj["title"] = input1val;
 	
-	//Now we will add to API using await in front of things that are promises 
-	try{
-		let response = await fetch('https://jsonplaceholder.typicode.com/todos',{
-  							method: 'POST',
-  							body: JSON.stringify({obj}),
-  							headers: {
-    						'Content-type': 'application/json; charset=UTF-8',
-  							},
-						});
-		let resolved = await response.json();
-		console.log(resolved)
+	//Now we will add to API using AJAX 
+
+	var xhr = new XMLHttpRequest();
+	xhr.open('post','https://jsonplaceholder.typicode.com/todos',true)
+	xhr.setRequestHeader('Content-type','application/json');
+	xhr.send(JSON.stringify({obj}));
+	xhr.onload = function() {
+		console.log(JSON.parse(xhr.response));
 	}
-	catch(error) {
-		alert(`There was an error in server: ${error}`)
+	xhr.onerror = function() {
+		alert('There was some problem in connecting with server');
 	}
+
+
+	// try{
+	// 	let response = await fetch('https://jsonplaceholder.typicode.com/todos',{
+ //  							method: 'POST',
+ //  							body: JSON.stringify({obj}),
+ //  							headers: {
+ //    						'Content-type': 'application/json; charset=UTF-8',
+ //  							},
+	// 					});
+	// 	let resolved = await response.json();
+	// 	console.log(resolved)
+	// }
+	// catch(error) {
+	// 	alert(`There was an error in server: ${error}`)
+	// }
 	
 
 	
